@@ -5,7 +5,8 @@ import pandas as pd
 import numpy as np
 from dash.dependencies import Output, Input
 
-data = pd.read_csv(r'C:\Users\cnwokocha.SOFTALLIANCE\Desktop\py4e\project_test\avocado.csv')
+url = 'https://github.com/kezeh32/Soft-analytic/blob/main/avocado.csv?raw=true'
+data = pd.read_csv(url, index_col=0)
 data["Date"] = pd.to_datetime(data["Date"], format="%Y-%m-%d")
 data.sort_values("Date", inplace=True)
 
